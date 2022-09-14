@@ -1,0 +1,20 @@
+<div class= "m-3">
+  <h1 class="text-center"><%= @restaurant.name %></h1>
+  <ul class="list-group">
+      <li class="list-group-item"><p class="fw-bold">Phone Number:</p><%= @restaurant.phone_number %></li>
+      <li class="list-group-item"><p class="fw-bold">Address:</p><%= @restaurant.address %></li>
+      <li class="list-group-item"><p class="fw-bold">Category:</p><%= @restaurant.category %></li>
+      <li class="list-group-item">
+      <ul>
+      <p class="fw-bold">Reviews:</p>
+        <% @restaurant.reviews.each do |review| %>
+        <li><%= review.content %></li>
+        <% end %>
+      </ul>
+      </li>
+  </ul>
+</div>
+<div class="m-3">
+<button type="button" class="btn btn-outline-primary"><%= link_to "See Restaurants", restaurants_path %></button>
+<button type="button" class="btn btn-outline-primary"><%= link_to "Add Review", new_restaurant_review_path(@restaurant) %></button>
+</div>
