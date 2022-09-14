@@ -1,0 +1,19 @@
+<div class= "m-3">
+<h1 class="text-center">Our Restaurants</h1>
+<table class="table table-success">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <% @restaurants.each do |restaurant| %>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.phone_number %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
